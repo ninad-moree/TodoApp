@@ -21,6 +21,10 @@ class PopUpMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
+      icon: const Icon(
+        Icons.more_vert,
+        color: Colors.orange,
+      ),
       itemBuilder: (context) {
         if (task.isDeleted == false) {
           return [
@@ -28,10 +32,10 @@ class PopUpMenu extends StatelessWidget {
               onTap: null,
               child: TextButton.icon(
                 onPressed: editTaskCallback,
-                icon: Icon(Icons.edit, color: Colors.orange[900]),
+                icon: Icon(Icons.edit, color: Colors.orange[600]),
                 label: Text(
                   'Edit',
-                  style: TextStyle(color: Colors.orange[900]),
+                  style: TextStyle(color: Colors.orange[600]),
                 ),
               ),
             ),
@@ -41,16 +45,16 @@ class PopUpMenu extends StatelessWidget {
                 onPressed: null,
                 icon: task.isFavorite == false
                     ? Icon(Icons.bookmark_add_outlined,
-                        color: Colors.orange[900])
-                    : Icon(Icons.bookmark_remove, color: Colors.orange[900]),
+                        color: Colors.orange[600])
+                    : Icon(Icons.bookmark_remove, color: Colors.orange[600]),
                 label: task.isFavorite == false
                     ? Text(
                         'Add to \nbookmark',
-                        style: TextStyle(color: Colors.orange[900]),
+                        style: TextStyle(color: Colors.orange[600]),
                       )
                     : Text(
                         'Remove from \nbookmark',
-                        style: TextStyle(color: Colors.orange[900]),
+                        style: TextStyle(color: Colors.orange[600]),
                       ),
               ),
             ),
@@ -60,11 +64,11 @@ class PopUpMenu extends StatelessWidget {
                 onPressed: null,
                 icon: Icon(
                   Icons.delete,
-                  color: Colors.orange[900],
+                  color: Colors.orange[600],
                 ),
                 label: Text(
                   'Delete',
-                  style: TextStyle(color: Colors.orange[900]),
+                  style: TextStyle(color: Colors.orange[600]),
                 ),
               ),
             ),
@@ -77,11 +81,11 @@ class PopUpMenu extends StatelessWidget {
                 onPressed: null,
                 icon: Icon(
                   Icons.restore_from_trash,
-                  color: Colors.orange[900],
+                  color: Colors.orange[600],
                 ),
                 label: Text(
                   'Restore',
-                  style: TextStyle(color: Colors.orange[900]),
+                  style: TextStyle(color: Colors.orange[600]),
                 ),
               ),
             ),
@@ -91,11 +95,11 @@ class PopUpMenu extends StatelessWidget {
                 onPressed: null,
                 icon: Icon(
                   Icons.delete_forever,
-                  color: Colors.orange[900],
+                  color: Colors.orange[600],
                 ),
                 label: Text(
                   'Delete Forever',
-                  style: TextStyle(color: Colors.orange[900]),
+                  style: TextStyle(color: Colors.orange[600]),
                 ),
               ),
             ),

@@ -47,15 +47,6 @@ class TasksList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TaskTile(task: task), // Task properties here
-                      Row(
-                        children: [
-                          const SizedBox(width: 45),
-                          Text(
-                            task.description,
-                            style: TextStyle(color: Colors.grey[500]),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),

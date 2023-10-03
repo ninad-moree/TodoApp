@@ -30,6 +30,7 @@ class ButtonWidget extends StatelessWidget {
             disabledForegroundColor: Colors.transparent,
             disabledBackgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
+            elevation: 4,
           ),
           onPressed: onPress,
           child: Padding(

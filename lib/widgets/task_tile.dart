@@ -54,29 +54,50 @@ class TaskTile extends StatelessWidget {
             child: Row(
               children: [
                 task.isFavorite == false
-                    ? const Icon(Icons.star_outline)
-                    : const Icon(Icons.star),
+                    ? Icon(
+                        Icons.star_outline,
+                        color: Colors.orange[500],
+                      )
+                    : Icon(
+                        Icons.star,
+                        color: Colors.orange[500],
+                      ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        task.title,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 18,
-                          decoration:
-                              task.isDone! ? TextDecoration.lineThrough : null,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          task.title,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            decoration: task.isDone!
+                                ? TextDecoration.lineThrough
+                                : null,
+                          ),
                         ),
-                      ),
-                      Text(
-                        DateFormat()
-                            .add_yMMMd()
-                            .add_Hms()
-                            .format(_parseDate(task.date)),
-                      ),
-                    ],
+                        Text(
+                          task.description,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                            color: Color.fromARGB(255, 49, 49, 49),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          DateFormat()
+                              .add_yMMMd()
+                              .add_Hms()
+                              .format(_parseDate(task.date)),
+                          style: const TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -84,14 +105,17 @@ class TaskTile extends StatelessWidget {
           ),
           Row(
             children: [
-              Checkbox(
-                activeColor: Colors.orange[400],
-                onChanged: task.isDeleted == false
-                    ? (value) {
-                        context.read<TasksBloc>().add(UpdateTask(task: task));
-                      }
-                    : null,
-                value: task.isDone,
+              Theme(
+                data: ThemeData(unselectedWidgetColor: Colors.orange[400]),
+                child: Checkbox(
+                  activeColor: Colors.orange[400],
+                  onChanged: task.isDeleted == false
+                      ? (value) {
+                          context.read<TasksBloc>().add(UpdateTask(task: task));
+                        }
+                      : null,
+                  value: task.isDone,
+                ),
               ),
               PopUpMenu(
                 task: task,
