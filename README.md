@@ -2,8 +2,15 @@
 
 ## Project Screenshots
 
-<img src="assets/HomeScreen.jpg" />
-<img src="assets/HomeScreen1.jpg" />
-<img src="assets/AddTask.jpg" />
-<img src="assets/RecycleBin.jpg" />
-<img src="assets/TaskDrawer.jpg" />
+<!-- Row 1 -->
+<p gap="30">
+  <img src="assets/HomeScreen.jpg" height="300" width="150"/>
+  <img src="assets/HomeScreen1.jpg" height="300" width="150"/>
+  <img src="assets/AddTask.jpg" height="300" width="150"/>
+</p>
+
+<!-- Row 2 -->
+<p>
+  <img src="assets/RecycleBin.jpg" height="300" width="150"/>
+  <img src="assets/TaskDrawer.jpg" height="300" width="150"/>
+</p>
