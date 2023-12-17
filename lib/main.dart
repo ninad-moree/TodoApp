@@ -35,8 +35,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-/*
-  email - hori1@gmail.com
-  pwd - test123
-*/
